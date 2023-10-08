@@ -1,9 +1,5 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import banner1 from "../../../assets/images/banner1.webp";
-import banner2 from "../../../assets/images/banner2.webp";
-import banner3 from "../../../assets/images/banner3.webp";
-import banner4 from "../../../assets/images/banner4.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -15,6 +11,9 @@ import conf from "../../../assets/images/conf.png";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 export default function Banner() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -22,6 +21,10 @@ export default function Banner() {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <>
       <Swiper
@@ -47,7 +50,11 @@ export default function Banner() {
                   {" "}
                   <img className="w-full" src={conf} alt="" />
                 </div>
-                <div className="flex items-center h-[500px] justify-center">
+                <div
+                  data-aos="fade-right"
+                  data-aos-duration="900"
+                  className="flex items-center h-[500px] justify-center"
+                >
                   <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                     <h1 className="text-white mb-3 text-2xl font-semibold">
                       WEDDING PLANNING
@@ -76,17 +83,18 @@ export default function Banner() {
                   {" "}
                   <img className="w-full" src={conf} alt="" />
                 </div>
-                <div>
+                <div data-aos="fade-right" data-aos-duration="900">
                   <div className="flex items-center h-[500px] justify-center">
                     <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                       <h1 className="text-white mb-3 text-2xl font-semibold">
-                        WEDDING PLANNING
+                        DESTINATION WEDDING{" "}
                       </h1>
                       <p className="text-base">
-                        Your wedding day is a celebration of you love let us
-                        help you celebrate your way. From beautiful designs and
-                        concepts our wedding stylists will put the perfect
-                        combination of carefully
+                        Destination Weddings is a team of wedding experts
+                        specializing in planning destination weddings at the
+                        Bangladeshi’s most exclusive hotels and resorts.
+                        Olivestree will custom tailor your destination wedding
+                        vision and create a wedding as unique and specia
                       </p>
                       <button className="px-2.5 mt-5 text-base py-1 border-2">
                         Read More
@@ -108,16 +116,20 @@ export default function Banner() {
                   <img className="w-full" src={conf} alt="" />
                 </div>
                 <div>
-                  <div className="flex items-center h-[500px] justify-center">
+                  <div
+                    data-aos="fade-right"
+                    data-aos-duration="900"
+                    className="flex items-center h-[500px] justify-center"
+                  >
                     <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                       <h1 className="text-white mb-3 text-2xl font-semibold">
-                        WEDDING PLANNING
+                        CORPORATE PARTY
                       </h1>
                       <p className="text-base">
-                        Your wedding day is a celebration of you love let us
-                        help you celebrate your way. From beautiful designs and
-                        concepts our wedding stylists will put the perfect
-                        combination of carefully
+                        Whether you have a business meeting, product launch,
+                        opening or long day conference function, we will work
+                        closely with you to ensure that you impress your clients
+                        and industry
                       </p>
                       <button className="px-2.5 mt-5 text-base py-1 border-2">
                         Read More
@@ -142,13 +154,14 @@ export default function Banner() {
                   <div className="flex items-center h-[500px] justify-center">
                     <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                       <h1 className="text-white mb-3 text-2xl font-semibold">
-                        WEDDING PLANNING
+                        BIRTHDAY PARTY
                       </h1>
                       <p className="text-base">
-                        Your wedding day is a celebration of you love let us
-                        help you celebrate your way. From beautiful designs and
-                        concepts our wedding stylists will put the perfect
-                        combination of carefully
+                        We can cover all types of birthday party events and we
+                        love planning children’s parties. We can take care of
+                        the entire birthday party for you or you may prefer us
+                        to help with a specific element of your kid’s birthday
+                        party our service is totally flexible.
                       </p>
                       <button className="px-2.5 mt-5 text-base py-1 border-2">
                         Read More

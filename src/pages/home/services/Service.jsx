@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const Service = ({ service }) => {
   console.log(service);
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
-    <div className="card-compact shadow-xl">
+    <div data-aos="fade-up" data-aos-delay="400" className="card-compact shadow-xl">
       <div className="w-full h-[250px]">
         <img
          className="w-full h-full"
