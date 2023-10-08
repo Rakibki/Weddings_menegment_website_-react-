@@ -4,6 +4,8 @@ import {
 import Root from "../layout/Root";
 import Home from "../pages/home/Home";
 import Blog from "../pages/blog/Blog";
+import About from "../pages/about/About";
+import Works from "../pages/works/Works";
 
 
   const router = createBrowserRouter([
@@ -16,8 +18,12 @@ import Blog from "../pages/blog/Blog";
             element: <Home />
         },
         {
-            path: "/blog",
-            element: <Blog />
+            path: "/about",
+            element: <About />
+        },
+        {
+          path: "/works",
+          element: <Works />
         }
       ]
     },

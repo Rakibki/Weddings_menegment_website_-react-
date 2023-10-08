@@ -1,15 +1,44 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import navUser from "../../../assets/images/user.png"
+import navUser from "../../../assets/images/user.png";
 
 const Navber = () => {
-  const navItems = <>
-    <li><NavLink>item</NavLink></li>
-    <li><NavLink>item</NavLink></li>
-    <li><NavLink>item</NavLink></li>
-  </>
+  const navItems = (
+    <>
+      <li className="text-base">
+        <NavLink
+          to={"/"}
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline text-[#e49239]" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li className="text-base">
+        <NavLink
+          to={"/about"}
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline text-[#e49239]" : ""
+          }
+        >
+          About
+        </NavLink>
+      </li>
+      <li className="text-base">
+        <NavLink
+          to={"/works"}
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline text-[#e49239]" : ""
+          }
+        >
+          Our Works
+        </NavLink>
+      </li>
+    </>
+  );
   return (
-    <div className="navbar bg-red-600 mb-3">
+    <div className="navbar bg-white py-3 lg:px-16 md:px-10 px-6 font-semibold text-black">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -38,14 +67,13 @@ const Navber = () => {
         <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="gap-5 menu-horizontal px-1">
-            {navItems}
-        </ul>
+        <ul className="gap-5 menu-horizontal px-1">{navItems}</ul>
       </div>
-      <div className="navbar-end">
-      <div className="w-10 rounded-full">
-          <img src={navUser} />
+      <div className="navbar-end gap-4">
+        <div className="w-10 rounded-full">
+            <img src={navUser} />
         </div>
+        <button className="btn btn-primary">Login</button>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import banner1 from ""
-import banner2 from "../../../assets/images/banner2.webp"
-import banner3 from "../../../assets/images/banner3.webp"
-import banner4 from "../../../assets/images/banner4.webp"
+import banner1 from "../../../assets/images/banner1.webp";
+import banner2 from "../../../assets/images/banner2.webp";
+import banner3 from "../../../assets/images/banner3.webp";
+import banner4 from "../../../assets/images/banner4.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -28,7 +28,7 @@ export default function Banner() {
         spaceBetween={30}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -47,8 +47,21 @@ export default function Banner() {
                   {" "}
                   <img className="w-full" src={conf} alt="" />
                 </div>
-                <div>
-                  <h1 className="text-white">hello wprls</h1>
+                <div className="flex items-center h-[500px] justify-center">
+                  <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                    <h1 className="text-white mb-3 text-2xl font-semibold">
+                      WEDDING PLANNING
+                    </h1>
+                    <p className="text-base">
+                      Your wedding day is a celebration of you love let us help
+                      you celebrate your way. From beautiful designs and
+                      concepts our wedding stylists will put the perfect
+                      combination of carefully
+                    </p>
+                    <button className="px-2.5 mt-5 text-base py-1 border-2">
+                      Read More
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -64,7 +77,22 @@ export default function Banner() {
                   <img className="w-full" src={conf} alt="" />
                 </div>
                 <div>
-                  <h1 className="text-white">hello wprls</h1>
+                  <div className="flex items-center h-[500px] justify-center">
+                    <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                      <h1 className="text-white mb-3 text-2xl font-semibold">
+                        WEDDING PLANNING
+                      </h1>
+                      <p className="text-base">
+                        Your wedding day is a celebration of you love let us
+                        help you celebrate your way. From beautiful designs and
+                        concepts our wedding stylists will put the perfect
+                        combination of carefully
+                      </p>
+                      <button className="px-2.5 mt-5 text-base py-1 border-2">
+                        Read More
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -80,7 +108,22 @@ export default function Banner() {
                   <img className="w-full" src={conf} alt="" />
                 </div>
                 <div>
-                  <h1 className="text-white">hello wprls</h1>
+                  <div className="flex items-center h-[500px] justify-center">
+                    <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                      <h1 className="text-white mb-3 text-2xl font-semibold">
+                        WEDDING PLANNING
+                      </h1>
+                      <p className="text-base">
+                        Your wedding day is a celebration of you love let us
+                        help you celebrate your way. From beautiful designs and
+                        concepts our wedding stylists will put the perfect
+                        combination of carefully
+                      </p>
+                      <button className="px-2.5 mt-5 text-base py-1 border-2">
+                        Read More
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -96,7 +139,22 @@ export default function Banner() {
                   <img className="w-full" src={conf} alt="" />
                 </div>
                 <div>
-                  <h1 className="text-white">hello wprls</h1>
+                  <div className="flex items-center h-[500px] justify-center">
+                    <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                      <h1 className="text-white mb-3 text-2xl font-semibold">
+                        WEDDING PLANNING
+                      </h1>
+                      <p className="text-base">
+                        Your wedding day is a celebration of you love let us
+                        help you celebrate your way. From beautiful designs and
+                        concepts our wedding stylists will put the perfect
+                        combination of carefully
+                      </p>
+                      <button className="px-2.5 mt-5 text-base py-1 border-2">
+                        Read More
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

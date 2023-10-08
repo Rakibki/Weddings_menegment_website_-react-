@@ -1,0 +1,30 @@
+[
+    {
+        "id" : "1",
+        "name" : "Alex Groshvin",
+        "image" : "https://i.ibb.co/0ZD2tkX/testi-3.webp",
+        "desc" : "Thank you so much for all your hard work, your flexibility and diligence in pulling together a very successful event. It was a pleasure working with you. We hope to have the opportunity to work with you again in the future.”"
+        
+    },
+    {
+        "id" : "2",
+        "name" : "Elizabeth Growth",
+        "image" : "https://i.ibb.co/K50SBL4/testi-2.png",
+        "desc" : "As the premier event planning company in the area, these people know that it’s not “one size fits all”. Every assignment they take is an event to remember. Our company has been using their services for years.”"
+        
+    },
+    {
+        "id" : "3",
+        "name" : "Julia Willams",
+        "image" : "https://i.ibb.co/9bG5PSH/testi-1.png",
+        "desc" : "I’ve hired this company for my son’s tenth birthday, and, honestly, it turned out to be the best decision I could have made! If you’re still on the fence, I strongly suggest you give these guys a chance – you won’t regret it.””"
+        
+    },
+    {
+        "id" : "4",
+        "name" : "John Snow",
+        "image" : "https://i.ibb.co/qjmNQcv/testi-4.jpg",
+        "desc" : "Right from the initial meeting, we found PartyMaker to be very organized, detail-oriented and professional. Their final proposed event plan stood out from the other tenders due to the level of detail involved.”"
+        
+    }
+]

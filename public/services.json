@@ -1,8 +1,44 @@
 [
     {
-        "title": "Indoor Party",
-        "desc": "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor",
-        "price": 23,
-        "imgae": ""
-    }
+        "id": "1",
+        "title": "WEDDING PLANNING",
+        "description": "Organizing a wedding is no small feat  it requires many hours of planning, organization and decision-making. Thats why so many couples turn to wedding planners for help. A wedding planner is the perfect resource for couples who want to make sure their big day goes off without a hitch. A wedding planner is a professional who specializes in helping couples plan their wedding. They can help with everything from finding a venue to choosing the right decorations and vendors. They are experienced in the nuances of wedding planning and can help couples save time and money. Wedding planners can also help reduce stress by handling all the details and making sure everything runs smoothly.Hiring a wedding planner is a great choice for couples who want to make sure their big day goes off without a hitch. A wedding planner can help couples save time and money, and provide advice on budgeting and wedding etiquette. Sky Born Wedding Planner is the perfect choice for couples looking for a professional, reliable and experienced wedding planner. With our help, couples can rest assured that their special day will be perfect in every way.",
+        "imgae": "https://i.ibb.co/MMgsmdB/banner4.webp",
+        "price" : 245
+    },
+    {
+        "id": "2",
+        "title": "SDESTINATION WEDDING",
+        "description": "Destination weddings are becoming increasingly popular among couples who want to make their special day unique, memorable, and a reflection of their personalities. Planning a destination wedding can be quite difficult, as it involves many details that must be taken care of - from finding the perfect location to ensuring that the wedding party and guests have an enjoyable and safe experience. That is where a destination wedding planner comes in. Planning a destination wedding can be daunting, as there are so many details to take into consideration. However, with the help of a destination wedding planner, you can make sure that your special day is perfect. Sky Born is one of the top destination wedding planners in Bangladesh, and they have years of experience in planning destination events. From selecting the perfect location to arranging all of the necessary details, Sky Born will make sure that your event is perfect. Destination weddings offer many advantages over traditional weddings, and with the help of Sky Born, you can make sure that your wedding is everything you dreamed of.",
+        "imgae": "https://i.ibb.co/6WpTPY4/banner3.webp",
+        "price" : 200
+      },
+    {
+        "id": "3",
+        "title": "BIRTHDAY PARTY",
+        "description": "Birthday parties are a special occasion for both kids and adults. Birthdays are the perfect opportunity to celebrate your loved ones and make them feel special. Planning a birthday party can be an overwhelming task, but with the right planning and preparation, it can be a memorable and enjoyable experience. That’s why it’s important to have a birthday party planner.Birthday parties are a special time to celebrate your loved ones and make them feel special. A birthday party planner can help you plan a successful event that your guests will remember. They can help you with decorations, food, and entertainment and can ensure that your event runs smoothly. Sky Born is a leading birthday party planner in Bangladesh and can help you plan a party that everyone will remember.",
+        "imgae": "https://i.ibb.co/vLkMZCV/banner1.webp",
+        "price" : 399
+      },
+    {
+        "id": "4",
+        "title": "CORPORATE PARTY",
+        "description": "Whether you have a business meeting, product launch, opening or long day conference function, we will work closely with you to ensure that you impress your clients and industry partners with memorable events that are perfectly styled and planned to represent your image.",
+        "imgae": "https://i.ibb.co/MRkD1PP/banner2.webp",
+        "price" : 165
+      },
+    {
+        "id": "5",
+        "title": "STAGE DECORATION",
+        "description": "Stage decoration is an important part of any event, be it a wedding a celebration, or a corporate event. It is the art of transforming and setting up the stage tcreate a visually-appealing, eye-catching, and memorable setting for the occasion. With the right decoration, your event will be remembered for years to come.Stage decoration is an important part of any event. It helps creatvisually-appealing and memorable atmosphere that is sure to be remembered for years to come. With the right decorations, your event will be a memorable and enjoyable experience for all. Event management companies in Bangladesh are highly experienced and adept at creating unique and memorable events.",
+        "imgae": "https://i.ibb.co/XkwB357/banner5.jpg",
+        "price" : 300
+      },
+    {
+        "id": "6",
+        "title": "LIGHTING DECORATION",
+        "description": "Lighting decoration is a way of creating a unique and beautiful atmosphere in your home or event. It is a way of transforming a dull and ordinary space into one that is full of life and character. Lighting decorations can be used to set the perfect mood for any occasion. Whether you are looking for a romantic evening, a fun and lively party, or something a little more formal, lighting decorations can help you achieve the atmosphere you are looking for. Lighting decoration is a great way to add style and atmosphere to any occasion. Whether you are looking for something traditional or modern, there are many options available to create the perfect atmosphere. Additionally, there are many lighting companies in Dhaka that can help you customize your lighting decorations to create the perfect atmosphere for your special event. With the right lighting decorations, you can create a beautiful and unique atmosphere that will make your event unforgettable.",
+        "imgae": "https://i.ibb.co/jZR9L0V/banner6.jpg",
+        "price" : 150
+      }
 ]
