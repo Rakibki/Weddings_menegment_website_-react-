@@ -4,7 +4,6 @@ import "aos/dist/aos.css"
 import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
-  console.log(service);
   useEffect(() => {
     AOS.init();
   }, [])

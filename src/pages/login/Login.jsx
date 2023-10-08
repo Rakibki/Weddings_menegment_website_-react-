@@ -3,12 +3,15 @@ import { HiOutlineMail } from "react-icons/hi";
 import { BiLockAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { authContext } from "../../providers/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { user, loginUser } = useContext(authContext);
+  console.log(user);
 
   const landleLogin = (e) => {
     e.preventDefault();
@@ -18,13 +21,14 @@ const Login = () => {
     }else if(!/[A-Z]/.test(password)) {
       return setError('Password must contain at least one uppercase letter')
     }
-    if(!/^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/.test(password)) {
-      return setError('Password must contain at least one special character')
-    }
+    // if(!/^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/.test(password)) {
+    //   return setError('Password must contain at least one special character')
+    // }
 
     loginUser(email, password)
     .then((res) => {
       console.log(res.user)
+      toast.success("successful Login");
     })
     .catch(e => {
       setError(e.message)
@@ -59,22 +63,14 @@ const Login = () => {
             />
             <BiLockAlt className="absolute top-1 text-[#777575] right-0 text-3xl" />
           </div>
-          <div className="flex mb-6 justify-between">
-            <div className="flex gap-2">
-              <input
-                type="checkbox"
-                className="w-[18px]"
-                name="checkbox"
-                id="checkbox"
-              />
-              <label htmlFor="checkbox">Remember me </label>
-            </div>
+          <div className="flex mb-6 justify-end">
             <div>
               <p className="hover:underline cursor-pointer">
                 Forgot your password?
               </p>
             </div>
           </div>
+          {error && <p className="text-red-500 mb-2 text-center">{error}</p>}
           <button className="px-6 rounded-xl w-full hover:text-[#e49239] hover:bg-white transition-all border-2 border-[#e49239] bg-[#222222] text-white font-semibold py-2">
             Login
           </button>{" "}
@@ -100,6 +96,18 @@ const Login = () => {
           </p>
         </div>
       </div>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </div>
   );
 };

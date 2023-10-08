@@ -10,6 +10,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/home/register/Register";
 import Error from "../pages/home/Error/Error";
 import ServiceDetails from "../pages/serviceDetails/ServiceDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
   const router = createBrowserRouter([
@@ -40,7 +41,7 @@ import ServiceDetails from "../pages/serviceDetails/ServiceDetails";
         },
         {
           path: "/service/:id",
-          element: <ServiceDetails />
+          element: <PrivateRoute><ServiceDetails /></PrivateRoute> 
         }
       ]
     },
