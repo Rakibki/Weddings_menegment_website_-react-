@@ -1,18 +1,47 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { BiLockAlt } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { authContext } from "../../providers/AuthProvider";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const { user, loginUser } = useContext(authContext);
+
+  const landleLogin = (e) => {
+    e.preventDefault();
+    setError("");
+    if(password.length < 6) {
+      return setError('Password must be at least 6 characters long.')
+    }else if(!/[A-Z]/.test(password)) {
+      return setError('Password must contain at least one uppercase letter')
+    }
+    if(!/^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/.test(password)) {
+      return setError('Password must contain at least one special character')
+    }
+
+    loginUser(email, password)
+    .then((res) => {
+      console.log(res.user)
+    })
+    .catch(e => {
+      setError(e.message)
+      console.log(e.message);
+    })
+  }
+
   return (
     <div className="flex justify-center w-full bg-[#ebf1f5]">
       <div className="w-[50%] h-auto p-16 bg-white my-8 shadow-xl">
         <h1 className="text-2xl font-semibold mb-6 text-center">
           Sign Into Your Account
         </h1>
-        <form className="mb-6">
+        <form onSubmit={landleLogin} className="mb-6">
           <div className="relative mb-8">
             <input
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full border-b-2 outline-none text-base py-2"
               type="email"
               name="email"
@@ -22,6 +51,7 @@ const Login = () => {
           </div>
           <div className="relative mb-8">
             <input
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full border-b-2 outline-none text-base py-2"
               type="password"
               name="password"
@@ -54,11 +84,20 @@ const Login = () => {
           <h2 className="mb-2 text-center">Or Login With</h2>
           <div className="flex justify-center">
             <div className="flex gap-3">
-              <button className="btn">Google</button>
-              <button className="btn">Github</button>
+              <button className="bg-[#db4437] px-3 py-2 text-white">
+                Google
+              </button>
+              <button className="bg-[#f7f7f7] px-3 py-2 text-black">
+                Github
+              </button>
             </div>
           </div>
-          <p className="text-center mt-4">Don't have an account? <Link className="text-[#e49239]" to={"/register"}>Register here</Link></p>
+          <p className="text-center mt-4">
+            Don't have an account?{" "}
+            <Link className="text-[#e49239]" to={"/register"}>
+              Register here
+            </Link>
+          </p>
         </div>
       </div>
     </div>

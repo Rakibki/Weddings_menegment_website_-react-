@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AOS from "aos"
 import "aos/dist/aos.css"
+import { Link } from "react-router-dom";
 
 const Service = ({ service }) => {
   console.log(service);
@@ -19,7 +20,7 @@ const Service = ({ service }) => {
         <h2 className="text-xl text-[#222222] font-medium text-center">{service.title}</h2>
         <p className="text-[#5b6674]">{service.description.slice(0,150)}...</p>
         <div className="card-actions justify-center">
-          <button className="btn text-[#e49239] btn-link">Read More</button>
+          <Link to={`/service/${service.id}`}><button className="btn text-[#e49239] btn-link">Read More</button></Link>
         </div>
       </div>
     </div>
