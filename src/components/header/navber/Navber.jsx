@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import navUser from "../../../assets/images/user.png";
 
 const Navber = () => {
@@ -73,7 +73,7 @@ const Navber = () => {
         <div className="w-10 rounded-full">
             <img src={navUser} />
         </div>
-        <button className="btn btn-primary">Login</button>
+        <Link to={"/login"}><button className="px-6 rounded-xl hover:text-[#e49239] hover:bg-white transition-all border-2 border-[#e49239] bg-[#222222] text-white font-semibold py-2">Login</button></Link>
       </div>
     </div>
   );

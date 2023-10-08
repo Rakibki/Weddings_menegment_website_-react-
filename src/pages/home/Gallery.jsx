@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos"
+import "aos/dist/aos.css"
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init();
+  }, [])
   return (
-    <div className="lg:px-16 md:px-10 px-6">
+    <div data-aos="fade-zoom-in" data-aos-offset="400" className="lg:px-16 md:px-10 px-6">
       <div className="mb-8 flex justify-center">
         <div>
           <h1 className="text-4xl text-center font-semibold text-[#e49239]">
