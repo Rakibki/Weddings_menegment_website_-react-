@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import navUser from "../../../assets/images/user.png";
+import { authContext } from "../../../providers/AuthProvider";
 
 const Navber = () => {
+  const { user, logOut } = useContext(authContext);
+  const handleLogOut = () => {
+    logOut().then(() => console.log("logout user"));
+  };
   const navItems = (
     <>
       <li className="text-base">
@@ -70,10 +75,30 @@ const Navber = () => {
         <ul className="gap-5 menu-horizontal px-1">{navItems}</ul>
       </div>
       <div className="navbar-end gap-4">
-        <div className="w-10 rounded-full">
-            <img src={navUser} />
+        <div className="rounded-full">
+          <div className="flex items-center gap-3">
+            <div>{user && user.displayName}</div>
+            <div>
+                {
+                  user && <img  className="w-10 rounded-full" src={user?.photoURL ? user?.photoURL : navUser} />
+                }
+            </div>
+          </div>
         </div>
-        <Link to={"/login"}><button className="px-6 rounded-xl hover:text-[#e49239] hover:bg-white transition-all border-2 border-[#e49239] bg-[#222222] text-white font-semibold py-2">Login</button></Link>
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="px-6 rounded-xl hover:text-[#e49239] hover:bg-white transition-all border-2 border-[#e49239] bg-[#222222] text-white font-semibold py-2"
+          >
+            Logout
+          </button>
+        ) : (
+          <Link to={"/login"}>
+            <button className="px-6 rounded-xl hover:text-[#e49239] hover:bg-white transition-all border-2 border-[#e49239] bg-[#222222] text-white font-semibold py-2">
+              Login
+            </button>
+          </Link>
+        )}
       </div>
     </div>
   );

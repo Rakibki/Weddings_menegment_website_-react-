@@ -55,7 +55,7 @@ export default function Banner() {
                   data-aos-duration="900"
                   className="flex items-center h-[500px] justify-center"
                 >
-                  <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                  <div className="w-[80%] md:w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                     <h1 className="text-white mb-3 text-2xl font-semibold">
                       WEDDING PLANNING
                     </h1>
@@ -85,7 +85,7 @@ export default function Banner() {
                 </div>
                 <div data-aos="fade-right" data-aos-duration="900">
                   <div className="flex items-center h-[500px] justify-center">
-                    <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                    <div className="w-[80%] md:w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                       <h1 className="text-white mb-3 text-2xl font-semibold">
                         DESTINATION WEDDING{" "}
                       </h1>
@@ -121,7 +121,7 @@ export default function Banner() {
                     data-aos-duration="900"
                     className="flex items-center h-[500px] justify-center"
                   >
-                    <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                    <div className="w-[80%] md:w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                       <h1 className="text-white mb-3 text-2xl font-semibold">
                         CORPORATE PARTY
                       </h1>
@@ -152,7 +152,7 @@ export default function Banner() {
                 </div>
                 <div>
                   <div className="flex items-center h-[500px] justify-center">
-                    <div className="w-[50%] shadow-xl bg-[#00000066] text-white p-8">
+                    <div className="w-[80%] md:w-[50%] shadow-xl bg-[#00000066] text-white p-8">
                       <h1 className="text-white mb-3 text-2xl font-semibold">
                         BIRTHDAY PARTY
                       </h1>

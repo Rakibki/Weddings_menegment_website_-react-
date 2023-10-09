@@ -11,7 +11,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const { user, loginUser } = useContext(authContext);
-  console.log(user);
 
   const landleLogin = (e) => {
     e.preventDefault();
