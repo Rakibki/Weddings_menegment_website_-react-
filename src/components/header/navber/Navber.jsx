@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import navUser from "../../../assets/images/user.png";
 import { authContext } from "../../../providers/AuthProvider";
+import logo from "../../../assets/images/logo.png"
 
 const Navber = () => {
   const { user, logOut } = useContext(authContext);
@@ -40,6 +41,16 @@ const Navber = () => {
           Our Works
         </NavLink>
       </li>
+      <li className="text-base">
+        <NavLink
+          to={"/support"}
+          className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "underline text-[#e49239]" : ""
+          }
+        >
+          Support
+        </NavLink>
+      </li>
     </>
   );
   return (
@@ -69,7 +80,9 @@ const Navber = () => {
             {navItems}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+        <a className="btn btn-ghost w-[200px] normal-case text-xl">
+          <Link to={"/"}><img src={logo} alt="" /></Link>
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="gap-5 menu-horizontal px-1">{navItems}</ul>
@@ -77,8 +90,8 @@ const Navber = () => {
       <div className="navbar-end gap-4">
         <div className="rounded-full">
           <div className="flex items-center gap-3">
-            <div>{user && user.displayName}</div>
-            <div>
+            <div className="hidden md:block">{user && user.displayName}</div>
+            <div className="hidden md:block">
                 {
                   user && <img  className="w-10 rounded-full" src={user?.photoURL ? user?.photoURL : navUser} />
                 }

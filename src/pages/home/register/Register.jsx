@@ -15,7 +15,22 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [photo, setPhoto] = useState("");
   const [error, setError] = useState("");
-  const { createUser } = useContext(authContext);
+  const { createUser, logInWithGoogle, singInWithGithub } = useContext(authContext);
+
+  const handleGoogleLogin = () => {
+    logInWithGoogle()
+    .then((res) => {
+      console.log(res.user);
+    })
+    .catch((e) => console.log(e.message))
+  }
+
+  const hangleGithubLogin = () => {
+    singInWithGithub()
+    .then(() => {
+      console.log("login github");
+    })
+  }
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -25,9 +40,9 @@ const Register = () => {
     }else if(!/[A-Z]/.test(password)) {
       return setError('Password must contain at least one uppercase letter')
     }
-    // if(!/^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/.test(password)) {
-    //   return setError('Password must contain at least one special character')
-    // }
+    if(!/^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~])/.test(password)) {
+      return setError('Password must contain at least one special character')
+    }
     createUser(email, password)
       .then((res) => {
         console.log(res.user, "user created");
@@ -52,7 +67,7 @@ const Register = () => {
 
   return (
     <div className="flex justify-center w-full bg-[#ebf1f5]">
-      <div className="w-[50%] h-auto p-16 bg-white my-8 shadow-xl">
+      <div className="w-[80%] md:w-[50%] h-auto p-16 bg-white my-8 shadow-xl">
         <h1 className="text-2xl font-semibold mb-6 text-center">
           Create a New Account
         </h1>
@@ -110,10 +125,10 @@ const Register = () => {
           <h2 className="mb-2 text-center">Or Login With</h2>
           <div className="flex justify-center">
             <div className="flex gap-3">
-              <button className="bg-[#db4437] px-3 py-2 text-white">
+              <button onClick={handleGoogleLogin} className="bg-[#db4437] px-3 py-2 text-white">
                 Google
               </button>
-              <button className="bg-[#f7f7f7] px-3 py-2 text-black">
+              <button onClick={hangleGithubLogin} className="bg-[#f7f7f7] px-3 py-2 text-black">
                 Github
               </button>
             </div>

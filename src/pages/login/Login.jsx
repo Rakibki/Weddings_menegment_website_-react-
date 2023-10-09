@@ -10,7 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const { user, loginUser } = useContext(authContext);
+  const { logInWithGoogle, loginUser, singInWithGithub } = useContext(authContext);
 
   const landleLogin = (e) => {
     e.preventDefault();
@@ -20,9 +20,9 @@ const Login = () => {
     }else if(!/[A-Z]/.test(password)) {
       return setError('Password must contain at least one uppercase letter')
     }
-    // if(!/^(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$/.test(password)) {
-    //   return setError('Password must contain at least one special character')
-    // }
+    if(!/^(?=.*[!@#$%^&*()_+{}\[\]:;<>,.?~])/.test(password)) {
+      return setError('Password must contain at least one special character')
+    }
 
     loginUser(email, password)
     .then((res) => {
@@ -35,9 +35,24 @@ const Login = () => {
     })
   }
 
+  const handleGoogleLogin = () => {
+    logInWithGoogle()
+    .then((res) => {
+      console.log(res.user);
+    })
+    .catch((e) => console.log(e.message))
+  }
+
+  const hangleGithubLogin = () => {
+    singInWithGithub()
+    .then(() => {
+      console.log("login github");
+    })
+  }
+
   return (
     <div className="flex justify-center w-full bg-[#ebf1f5]">
-      <div className="w-[50%] h-auto p-16 bg-white my-8 shadow-xl">
+      <div className="w-[80%] md:w-[50%] h-auto p-16 bg-white my-8 shadow-xl">
         <h1 className="text-2xl font-semibold mb-6 text-center">
           Sign Into Your Account
         </h1>
@@ -79,10 +94,10 @@ const Login = () => {
           <h2 className="mb-2 text-center">Or Login With</h2>
           <div className="flex justify-center">
             <div className="flex gap-3">
-              <button className="bg-[#db4437] px-3 py-2 text-white">
+              <button onClick={handleGoogleLogin} className="bg-[#db4437] px-3 py-2 text-white">
                 Google
               </button>
-              <button className="bg-[#f7f7f7] px-3 py-2 text-black">
+              <button onClick={hangleGithubLogin} className="bg-[#f7f7f7] px-3 py-2 text-black">
                 Github
               </button>
             </div>
