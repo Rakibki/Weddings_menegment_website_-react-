@@ -1,4 +1,3 @@
-import React from "react";
 import fact from "../../../assets/images/fact.webp"
 import CountUp from "react-countup";
 
